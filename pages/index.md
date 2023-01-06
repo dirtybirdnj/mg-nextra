@@ -9,7 +9,12 @@ import styles from './style.module.sass';
 
 <button className={styles.button}>SASS, CSS modules, JSX inside Markdown</button>
 
-I am going to the movies today.
+Here are the current goals for fixing the layout of this repo:
+
+1. Center the entire layout
+2. Make the header links collapse into a hamburger menu
+3. Make header links show on all pages (or hamburger on mobile)
+4. Make footer show on all pages
 
 {/* Check out https://nextra.site/docs/guide/syntax-highlighting */}
 
