@@ -19,18 +19,35 @@ function Layout({ pageOpts, children }) {
       </Head>
       <div>
         <navbar className={styles.navbar}>
-          <h2>This is the navbar</h2>
+          <h2>verticaltubejig.com</h2>
           {
             // You can also set a NEXT_LOCALE cookie to make it the default redirection target:
             // document.cookie = `NEXT_LOCALE=de; path=/`
           }
-          <Link href={'/'} locale='en'>
-            EN
+          <Link href={'/'}>
+            home
           </Link>
           {' | '}
-          <Link href={'/'} locale='de'>
-            DE
+          <Link href={'/store'}>
+            shop
           </Link>
+          {' | '}
+          <Link href={'/gallery'}>
+            gallery
+          </Link>
+          {' | '}
+          <Link href={'/blog'}>
+            blog
+          </Link>
+          {' | '}
+          <Link href={'/about'}>
+            about
+          </Link>
+          {' | '}
+          <Link href={'/'}>
+            contact
+          </Link>
+
         </navbar>
         <main className={styles.main}>
           <aside className={styles.sidebar}>
@@ -63,7 +80,7 @@ function Layout({ pageOpts, children }) {
             </MDXProvider>
           </article>
         </main>
-        <footer>This is the footer</footer>
+        <footer>verticaltubejig.com | <Link href="https://www.vtapi.co">vtapi.co</Link></footer>
       </div>
     </>
   )
