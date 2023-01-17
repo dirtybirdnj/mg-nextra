@@ -1,7 +1,12 @@
-import Link from 'next/link'
-import styles from '../theme.module.sass'
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+
+import styles from '../theme.module.sass';
 
 const Navbar = () => {
+  const router = useRouter();
+  const currentRoute = router.pathname;
+
   const navItems = [
     'home',
     'store',
@@ -11,17 +16,16 @@ const Navbar = () => {
     'contact'
   ]
 
-  const links = navItems.map(item => {
-    return <Link href={item === 'home' ? '/' : '/' + item}>{item}</Link>
+  const links = navItems.map((item, i) => {
+    const path = item === 'home' ? '/' : '/' + item;
+
+    return <Link key={i} className={currentRoute === path ? styles.active : ''} href={path}>{item}</Link>
   })
 
   return (
     <div className={styles.header}>
       <h2>verticaltubejig.com</h2>
-      {
-        // You can also set a NEXT_LOCALE cookie to make it the default redirection target:
-        // document.cookie = `NEXT_LOCALE=de; path=/`
-      }
+
       <div className={styles.navbar}>
         {links}
       </div>
