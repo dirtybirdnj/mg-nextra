@@ -2,6 +2,7 @@ import { useRouter } from 'next/router'
 import Head from 'next/head'
 import Link from 'next/link'
 import { MDXProvider } from '@mdx-js/react'
+import Navbar from './components/Navbar'
 
 import styles from './theme.module.sass'
 
@@ -18,37 +19,7 @@ function Layout({ pageOpts, children }) {
         <title>{pageOpts.title}</title>
       </Head>
       <div>
-        <navbar className={styles.navbar}>
-          <h2>verticaltubejig.com</h2>
-          {
-            // You can also set a NEXT_LOCALE cookie to make it the default redirection target:
-            // document.cookie = `NEXT_LOCALE=de; path=/`
-          }
-          <Link href={'/'}>
-            home
-          </Link>
-          {' | '}
-          <Link href={'/store'}>
-            shop
-          </Link>
-          {' | '}
-          <Link href={'/gallery'}>
-            gallery
-          </Link>
-          {' | '}
-          <Link href={'/blog'}>
-            blog
-          </Link>
-          {' | '}
-          <Link href={'/about'}>
-            about
-          </Link>
-          {' | '}
-          <Link href={'/'}>
-            contact
-          </Link>
-
-        </navbar>
+        <Navbar/>
         <main className={styles.main}>
           <aside className={styles.sidebar}>
             <h3>Navigation</h3>
