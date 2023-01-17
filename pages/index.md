@@ -11,10 +11,10 @@ import styles from './style.module.sass';
 
 Here are the current goals for fixing the layout of this repo:
 
-1. Center the entire layout
+1. Center the entire layout ✅
 2. Make the header links collapse into a hamburger menu
-3. Make header links show on all pages (or hamburger on mobile)
-4. Make footer show on all pages
+3. Make header links show on all pages (or hamburger on mobile) ✅
+4. Make footer show on all pages ✅
 
 {/* Check out https://nextra.site/docs/guide/syntax-highlighting */}
 
