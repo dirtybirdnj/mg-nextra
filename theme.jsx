@@ -14,46 +14,39 @@ function Layout({ pageOpts, children }) {
   // console.log(pageOpts.pageMap)
 
   return (
-    <>
-      <Head>
-        <title>{pageOpts.title}</title>
-      </Head>
-      <div>
-        <Navbar/>
-        <main className={styles.main}>
-          <aside className={styles.sidebar}>
-            <h3>Navigation</h3>
-            <div>
-              <Link href='/'>Home</Link>
-            </div>
-            <div>
-              <Link href='/docs/v19/globals'>Globals</Link>
-            </div>
-          </aside>
-          <article>
-            <MDXProvider
-              components={{
-                // You can add custom components here for MDX
-                h1: (props) => <h1 className={styles.h1} {...props} />,
-                pre: ({ filename, ...props }) => {
-                  return (
-                    <div className={styles.codeblock}>
-                      {filename ? (
-                        <div className={styles.filename}>{filename}</div>
-                      ) : null}
-                      <pre {...props} />
-                    </div>
-                  )
-                },
-              }}
-            >
-              {children}
-            </MDXProvider>
-          </article>
-        </main>
-        <footer>verticaltubejig.com | <Link href="https://www.vtapi.co">vtapi.co</Link></footer>
+    <div className={styles.page}>
+      <div className={styles.container}>
+        <Head>
+          <title>{pageOpts.title}</title>
+        </Head>
+        <div>
+          <Navbar/>
+          <main className={styles.main}>
+            <article>
+              <MDXProvider
+                components={{
+                  // You can add custom components here for MDX
+                  h1: (props) => <h1 className={styles.h1} {...props} />,
+                  pre: ({ filename, ...props }) => {
+                    return (
+                      <div className={styles.codeblock}>
+                        {filename ? (
+                          <div className={styles.filename}>{filename}</div>
+                        ) : null}
+                        <pre {...props} />
+                      </div>
+                    )
+                  },
+                }}
+              >
+                {children}
+              </MDXProvider>
+            </article>
+          </main>
+          <footer>verticaltubejig.com | <Link href="https://www.vtapi.co">vtapi.co</Link></footer>
+        </div>
       </div>
-    </>
+    </div>
   )
 }
 
