@@ -16,13 +16,13 @@ function Layout({ pageOpts, children }) {
   return (
     <div className={styles.page}>
       <div className={styles.container}>
-        <Head>
-          <title>{pageOpts.title}</title>
-        </Head>
         <div>
-          <Navbar/>
-          <main className={styles.main}>
-            <article>
+          <Head>
+            <title>{pageOpts.title}</title>
+          </Head>
+          <div>
+            <Navbar/>
+            <main className={styles.main}>
               <MDXProvider
                 components={{
                   // You can add custom components here for MDX
@@ -41,10 +41,10 @@ function Layout({ pageOpts, children }) {
               >
                 {children}
               </MDXProvider>
-            </article>
-          </main>
-          <footer>verticaltubejig.com | <Link href="https://www.vtapi.co">vtapi.co</Link></footer>
+            </main>          
+          </div>
         </div>
+        <footer className={styles.footer}>verticaltubejig.com | <Link href="https://www.vtapi.co">vtapi.co</Link></footer>
       </div>
     </div>
   )

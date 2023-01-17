@@ -1,7 +1,17 @@
+.container 
+  max-width: 750px
+  min-height: 100vh
+  margin: 0px auto
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+
 .header 
 
   h2
     font-size: 36px
+    margin: 0px
+    padding: 30px 0 10px
 
 .navbar 
   display: flex
@@ -9,16 +19,19 @@
 
   a 
     padding: 0 10px
-    color: #fff
+    color: darkblue
 
 .main
   display: flex
+  flex-direction: column
+  align-items: flex-start
   gap: 10px
 
-.sidebar
-  flex: 0 0 200px
-  padding: 10px
-  background: #f3f3f3
+.footer
+  padding: 20px 0 30px
+
+  a 
+    color: darkblue
 
 .codeblock
   background: #f3f3f3
@@ -36,7 +49,3 @@
 .filename
   color: #666
   font-size: 12px
-
-.container 
-  max-width: 750px
-  margin: 0px auto
