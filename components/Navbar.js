@@ -2,6 +2,18 @@ import Link from 'next/link'
 import styles from '../theme.module.sass'
 
 const Navbar = () => {
+  const navItems = [
+    'home',
+    'store',
+    'gallery',
+    'blog',
+    'about',
+    'contact'
+  ]
+
+  const links = navItems.map(item => {
+    return <Link href={item === 'home' ? '/' : '/' + item}>{item}</Link>
+  })
 
   return (
     <div className={styles.header}>
@@ -11,29 +23,7 @@ const Navbar = () => {
         // document.cookie = `NEXT_LOCALE=de; path=/`
       }
       <div className={styles.navbar}>
-        <Link href={'/'}>
-          home
-        </Link>
-        {' | '}
-        <Link href={'/store'}>
-          shop
-        </Link>
-        {' | '}
-        <Link href={'/gallery'}>
-          gallery
-        </Link>
-        {' | '}
-        <Link href={'/blog'}>
-          blog
-        </Link>
-        {' | '}
-        <Link href={'/about'}>
-          about
-        </Link>
-        {' | '}
-        <Link href={'/contact'}>
-          contact
-        </Link>
+        {links}
       </div>
     </div>
   )
