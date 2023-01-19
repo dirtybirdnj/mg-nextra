@@ -5,32 +5,10 @@ trademark: Trademark
 
 import styles from './style.module.sass';
 
-# Hello
+![Lake Trout and a Dipped Tube](https://res.cloudinary.com/dfjzpbdey/image/upload/v1672160659/verticaltubejig.com/20220315_115428_y6m1wt.jpg)
 
-<button className={styles.button}>SASS, CSS modules, JSX inside Markdown</button>
+We offer jigging lures designed to engage agressive fish that want to chase. If you are looking for slow flutter lures go elsewhere.
 
-Here are the current goals for fixing the layout of this repo:
+![A destroyed VTJ after catching several lakers](https://res.cloudinary.com/dfjzpbdey/image/upload/v1672160759/verticaltubejig.com/20220726_195452_01_mghoxa.jpg)
 
-1. Center the entire layout ✅
-2. Make the header links collapse into a hamburger menu
-3. Make header links show on all pages (or hamburger on mobile) ✅
-4. Make footer show on all pages ✅
-
-{/* Check out https://nextra.site/docs/guide/syntax-highlighting */}
-
-```javascript filename="index.js" {1,4-5}
-const http = require('http');
-
-const hostname = '127.0.0.1';
-const port = 3000;
-
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World');
-});
-
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
-```
+Our baits and trebles are all assembled (hand-painted and hand tied) in Huntington, Vermont. They represent an evolution of a few years of learning and fishing the waters of Lake Champlain. The process of experimenting with new colors, ideas and strategies will never end but we want to bring our findings to others and spread the word of the VTJ.
