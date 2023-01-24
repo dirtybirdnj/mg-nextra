@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { MDXProvider } from '@mdx-js/react'
 import Navbar from './components/Navbar'
 
+
 import styles from './theme.module.sass'
 
 function Layout({ pageOpts, children }) {
@@ -14,6 +15,11 @@ function Layout({ pageOpts, children }) {
   // console.log(pageOpts.pageMap)
 
   return (
+
+    <>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://cdn.snipcart.com/scripts/2.0/snipcart.js" data-api-key="M2IyMmNmYTEtNjQ0Yi00MjI2LTkwOTMtZGIxOWY0MDZlNTgzNjM3MTI0MDkxNTc3MzgyMDA3" id="snipcart"></script>
+    <link href="https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css" rel="stylesheet" type="text/css" />
     <div className={styles.page}>
       <div className={styles.container}>
         <div>
@@ -41,12 +47,13 @@ function Layout({ pageOpts, children }) {
               >
                 {children}
               </MDXProvider>
-            </main>          
+            </main>
           </div>
         </div>
         <footer className={styles.footer}>verticaltubejig.com | <Link href="https://www.vtapi.co">vtapi.co</Link></footer>
       </div>
     </div>
+    </>
   )
 }
 
