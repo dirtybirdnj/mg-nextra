@@ -1,5 +1,5 @@
 ---
-title: Hello Store!
+title: Hello Store! - verticaltubejig.com
 date: 2023/1/3
 description: A new website all about Vertical Tube Jigs is born!
 tag: vertical tube jig

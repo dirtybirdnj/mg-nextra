@@ -1,6 +1,6 @@
 ---
 type: posts
-title: Blog
+title: 📰 Blog - verticaltubejig.com
 ---
 # Blog
 
