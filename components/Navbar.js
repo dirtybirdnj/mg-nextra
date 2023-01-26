@@ -25,7 +25,7 @@ const Navbar = () => {
   return (
     <div className={styles.header}>
       <h2>verticaltubejig.com</h2>
-
+    <p><button class="snipcart-checkout">View Cart 🛒</button></p>
       <div className={styles.navbar}>
         {links}
       </div>
