@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import styles from '../theme.module.sass';
+import Image from 'next/image'
+
 
 const Navbar = () => {
   const router = useRouter();
@@ -24,8 +26,9 @@ const Navbar = () => {
 
   return (
     <div className={styles.header}>
-      <h2>verticaltubejig.com</h2>
-    <p><button class="snipcart-checkout">View Cart 🛒</button></p>
+
+      <h2><Image style={{ display: "inline" }} src="/img/vtj-hwg-hook.svg" alt="Hello" width={100} height={100} />verticaltubejig.com</h2>
+    <p><button className="snipcart-checkout">View Cart 🛒</button></p>
       <div className={styles.navbar}>
         {links}
       </div>
