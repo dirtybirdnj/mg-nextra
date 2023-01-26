@@ -70,18 +70,6 @@ export default function Theme(props) {
   return (
     <Layout pageOpts={pageOpts}>
       <Content {...props} />
-
-      {/* {pageMap.map((item) => {
-        console.log(item);
-        // if (item.kind === 'MdxPage') {
-        //   return (
-        //     <Link key={item.name} href={item.route}>
-        //       {item.route}
-        //     </Link>
-        //   )
-        // }
-        // return null
-      })} */}
       <div style={{ }}>{children}</div>
     </Layout>
   )

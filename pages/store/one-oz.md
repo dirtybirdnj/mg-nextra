@@ -6,6 +6,7 @@ description: 1oz Vertical Tube Jig
 tag:
 author: Mat Gilbert
 link: false
+sold: false
 ---
 
 ## 1oz Vertical Tube Jig

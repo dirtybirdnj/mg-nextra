@@ -6,9 +6,7 @@ tag: vertical tube jig
 author: Mat Gilbert
 ---
 
-# [verticaltubejig.com](https://www.verticaltubejig.com)
-
-## Hello Store!
+# Hello Store!
 
 In 2021, Mat Gilbert was invited to go fishing for Lake Trout on Lake Champlain and things have never been the same.
 
