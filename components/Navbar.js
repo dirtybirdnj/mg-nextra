@@ -27,8 +27,10 @@ const Navbar = () => {
   return (
     <div className={styles.header}>
 
-      <h2><Image style={{ display: "inline" }} src="/img/vtj-hwg-hook.svg" alt="Hello" width={100} height={100} />verticaltubejig.com</h2>
-    <p><button className="snipcart-checkout">View Cart 🛒</button></p>
+      <div style={{display: 'flex', alignItems: 'center'}}> <Image style={{  }} src="/img/vtj-circle.svg" alt="verticaltubejig.com" width={100} height={100} /></div>
+
+      <h2>verticaltubejig.com</h2>
+      <p><button className="snipcart-checkout">View Cart 🛒</button></p>
       <div className={styles.navbar}>
         {links}
       </div>
