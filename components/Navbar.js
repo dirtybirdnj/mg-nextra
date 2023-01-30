@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
@@ -91,8 +92,6 @@ const Navbar = () => {
 
     return <Link key={i} className={currentRoute === path ? 'active' : ''} href={path}>{item}</Link>
   });
-
-  console.log('window.innerWidth', window.innerWidth);
 
   return (
     <NavbarContainer>
