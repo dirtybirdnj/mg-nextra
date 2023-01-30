@@ -4,6 +4,8 @@ import styled from 'styled-components';
 
 import Image from 'next/image';
 
+const smallBreakpoint = '600px';
+
 const NavbarContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -15,6 +17,12 @@ const NavbarEl = styled.div`
   justify-content: space-between;
   align-items: center;
   gap: 50px;
+
+  @media only screen and (max-width: ${smallBreakpoint}) {
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+  }
 `;
 
 const LogoContainer = styled.div`
@@ -27,6 +35,10 @@ const LogoContainer = styled.div`
 const LinksContainer = styled.div`
   display: flex;
   gap: 15px;
+
+  @media only screen and (max-width: 600px) {
+    justify-content: space-between;
+  }
 
   a {
     line-height: 30px;
@@ -78,7 +90,9 @@ const Navbar = () => {
     const path = item === 'home' ? '/' : '/' + item;
 
     return <Link key={i} className={currentRoute === path ? 'active' : ''} href={path}>{item}</Link>
-  })
+  });
+
+  console.log('window.innerWidth', window.innerWidth);
 
   return (
     <NavbarContainer>
