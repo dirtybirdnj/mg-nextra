@@ -4,9 +4,8 @@ const withNextra = require('nextra')({
 })
 
 module.exports = withNextra({
-  // Other Next.js configurations
-  // i18n: {
-  //   locales: ['default', 'en', 'de'],
-  //   defaultLocale: 'default',
-  // },
+  compiler: {
+    // Enables the styled-components SWC transform
+    styledComponents: true
+  }
 })
