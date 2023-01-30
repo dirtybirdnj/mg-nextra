@@ -29,9 +29,6 @@ const LinksContainer = styled.div`
   gap: 15px;
 
   a {
-    color: #275ea3;
-    cursor: pointer;
-    font-size: 18px;
     line-height: 30px;
 
     &.active {
