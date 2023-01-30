@@ -1,11 +1,67 @@
-import { useRouter } from 'next/router'
-import Head from 'next/head'
-import Link from 'next/link'
-import { MDXProvider } from '@mdx-js/react'
-import Navbar from './components/Navbar'
+import { useRouter } from 'next/router';
+import Head from 'next/head';
+import Link from 'next/link';
+import { MDXProvider } from '@mdx-js/react';
+import styled from 'styled-components';
 
+import Navbar from './components/Navbar';
 
-import styles from './theme.module.sass'
+const Container = styled.div`
+  max-width: 750px;
+  min-height: 100vh;
+  margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 25px;
+`;
+
+const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+`;
+
+const Main = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+`;
+
+const Codeblock = styled.div`
+  background: #f3f3f3;
+  padding: 10px;
+  border: 1px solid #d9d9d9;
+  border-radius: 5px;
+
+  code {
+    display: flex;
+    flex-direction: column;
+  }
+
+  span {
+    display: block;
+  }
+`;
+
+const Filename = styled.div`
+  color: #666;
+  font-size: 12px;
+`;
+
+const Footer = styled.div`
+  padding: 20px 0 30px;
+
+  a {
+    color: #275ea3;
+  }
+`;
 
 function Layout({ pageOpts, children }) {
   // Front matter of the current page:
@@ -21,39 +77,35 @@ function Layout({ pageOpts, children }) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script src="https://cdn.snipcart.com/scripts/2.0/snipcart.js" data-api-key="M2IyMmNmYTEtNjQ0Yi00MjI2LTkwOTMtZGIxOWY0MDZlNTgzNjM3MTI0MDkxNTc3MzgyMDA3" id="snipcart"></script>
     <link href="https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css" rel="stylesheet" type="text/css" />
-    <div className={styles.page}>
-      <div className={styles.container}>
-        <div>
-          <Head>
-            <title>{pageOpts.title}</title>
-          </Head>
-          <div>
-            <Navbar/>
-            <main className={styles.main}>
-              <MDXProvider
-                components={{
-                  // You can add custom components here for MDX
-                  h1: (props) => <h1 className={styles.h1} {...props} />,
-                  pre: ({ filename, ...props }) => {
-                    return (
-                      <div className={styles.codeblock}>
-                        {filename ? (
-                          <div className={styles.filename}>{filename}</div>
-                        ) : null}
-                        <pre {...props} />
-                      </div>
-                    )
-                  },
-                }}
-              >
-                {children}
-              </MDXProvider>
-            </main>
-          </div>
-        </div>
-        <footer className={styles.footer}>verticaltubejig.com | <Link href="https://www.vtapi.co">vtapi.co</Link></footer>
-      </div>
-    </div>
+
+    <Container>
+        <Head>
+          <title>{pageOpts.title}</title>
+        </Head>
+        <Content>
+          <Navbar/>
+          <Main>
+            <MDXProvider
+              components={{
+                // You can add custom components here for MDX
+                pre: ({ filename, ...props }) => {
+                  return (
+                    <Codeblock>
+                      {filename ? (
+                        <Filename>{filename}</Filename>
+                      ) : null}
+                      <pre {...props} />
+                    </Codeblock>
+                  )
+                },
+              }}
+            >
+              {children}
+            </MDXProvider>
+          </Main>
+        </Content>
+      <Footer>verticaltubejig.com | <Link href="https://www.vtapi.co">vtapi.co</Link></Footer>
+    </Container>
     </>
   )
 }

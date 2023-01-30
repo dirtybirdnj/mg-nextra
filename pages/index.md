@@ -3,8 +3,6 @@ title: 🎣 verticaltubejig.com
 trademark: Trademark
 ---
 
-import styles from './style.module.sass';
-
 ![Lake Trout and a Dipped Tube](https://res.cloudinary.com/dfjzpbdey/image/upload/v1672160659/verticaltubejig.com/20220315_115428_y6m1wt.jpg)
 
 We offer jigging lures designed to engage agressive fish that want to chase. If you are looking for slow flutter lures go elsewhere.
