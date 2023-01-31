@@ -31,19 +31,19 @@ const Header = ({
   }, [pageMap])
 
   return (
-    <Container>
-      <Row>
-        <Col>
-          <Image width={100} height={100} src="/img/vtj-circle.svg" alt="verticaltubejig.com" />
+    <Container css={{paddingTop: '30px', paddingBottom: '30px'}}>
+      <Row justify="space-between" align="center">
+        <Col span={2}>
+          <Image src="/img/vtj-circle.svg" alt="verticaltubejig.com" />
           <Text h4>verticaltubejig.com</Text>
         </Col>
-        <Col>
-          <Button className="snipcart-checkout">View Cart 🛒</Button>
-          <Navbar>
+        <Col css={{display: 'flex', flexDirection: 'column', alignItems: 'flex-end'}}>  
+          <Button className="snipcart-checkout">View Cart 🛒</Button>        
+          <Navbar isCompact disableShadow disableBlur containerCss={{display: 'flex', justifyContent: 'flex-end'}}>
             <Navbar.Content>
               {navItems}
             </Navbar.Content>
-          </Navbar>
+          </Navbar>          
         </Col>
       </Row>
     </Container>
