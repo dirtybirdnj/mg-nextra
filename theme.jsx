@@ -2,12 +2,9 @@ import { useRouter } from 'next/router'
 import Head from 'next/head'
 import Link from 'next/link'
 import { MDXProvider } from '@mdx-js/react'
-import Navbar from './components/Navbar'
+import Header from './components/Header'
 
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-import Image from 'react-bootstrap/Image'
+import { Container, Row, Col, Image } from "@nextui-org/react";
 
 function Layout({ pageOpts, children }) {
   // Front matter of the current page:
@@ -28,7 +25,7 @@ function Layout({ pageOpts, children }) {
       <Container>
         <Row>
           <Col>
-            <Navbar pageMap={pageOpts.pageMap} />
+            <Header pageMap={pageOpts.pageMap} />
           </Col>
         </Row>
         <Row>
@@ -37,7 +34,7 @@ function Layout({ pageOpts, children }) {
               components={{
                 // You can add custom components here for MDX
                 h1: (props) => <h1 {...props} />,
-                img: (props) => <Image fluid {...props} />,
+                img: (props) => <Image {...props} />,
                 pre: ({ filename, ...props }) => {
                   return (
                     <div>
