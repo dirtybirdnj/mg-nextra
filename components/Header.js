@@ -36,7 +36,7 @@ const Header = ({
       <Spacer y={2} />
       <Container>
         <Row justify="space-between" align="center">
-          <Col span={2}>
+          <Col span={2} align="center">
             <Image src="/img/vtj-circle.svg" alt="verticaltubejig.com" />
             <Text h4>verticaltubejig.com</Text>
           </Col>
