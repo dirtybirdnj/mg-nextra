@@ -34,7 +34,6 @@ const Header = ({
   return (
     <>
       <Spacer y={2} />
-      <Container>
         <Row justify="space-between" align="center">
           <Col span={2} align="center">
             <Image src="/img/vtj-circle.svg" alt="verticaltubejig.com" />
@@ -49,8 +48,7 @@ const Header = ({
             <Button size="sm" bordered auto icon={<Buy primaryColor="currentColor" set="broken" />}>View Cart</Button>
           </Col>
         </Row>
-      </Container>
-      <Spacer y={2} />
+      <Spacer y={1} />
     </>
   )
 };
