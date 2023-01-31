@@ -1,40 +1,44 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-import styles from '../theme.module.sass';
-import Image from 'next/image'
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
+import Image from 'react-bootstrap/Image';
 
+//import Image from 'next/image';
 
-const Navbar = () => {
+const Navbar = ({
+  pageMap
+}) => {
   const router = useRouter();
   const currentRoute = router.pathname;
 
-  const navItems = [
-    'home',
-    'store',
-    'gallery',
-    'blog',
-    'about',
-    'contact'
-  ]
+  console.log('pageMap', pageMap);
+  
 
-  const links = navItems.map((item, i) => {
-    const path = item === 'home' ? '/' : '/' + item;
-
-    return <Link key={i} className={currentRoute === path ? styles.active : ''} href={path}>{item}</Link>
+  const links = pageMap.map((item, i) => {   
+    if (item.route)
+      return (<Link key={i} className={currentRoute === item.route ? 'active' : ''} href={item.route}>{item.name === 'index' ? 'home' : item.name}</Link>) 
   })
 
   return (
-    <div className={styles.header}>
-
-      <div style={{display: 'flex', alignItems: 'center'}}> <Image style={{  }} src="/img/vtj-circle.svg" alt="verticaltubejig.com" width={100} height={100} /></div>
-
-      <h2>verticaltubejig.com</h2>
-      <p><button className="snipcart-checkout">View Cart 🛒</button></p>
-      <div className={styles.navbar}>
-        {links}
-      </div>
-    </div>
+    <Container>
+      <Row>
+        <Col>
+          <Image src="/img/vtj-circle.svg" alt="verticaltubejig.com" />
+          <h2>verticaltubejig.com</h2>
+          </Col>
+      </Row>
+      <Row>
+        <Col></Col>
+        <Col>
+          <Button className="snipcart-checkout">View Cart 🛒</Button>
+        </Col>
+        <Col>{links}</Col>
+      </Row>
+    </Container>
   )
 };
 
