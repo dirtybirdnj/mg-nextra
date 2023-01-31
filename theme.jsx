@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { MDXProvider } from '@mdx-js/react'
 import Header from './components/Header'
+import Script from 'next/script'
 
 import { Container, Row, Col, Image } from "@nextui-org/react";
 
@@ -18,8 +19,8 @@ function Layout({ pageOpts, children }) {
       <Head>
         <title>{pageOpts.title}</title>
         <link rel="shortcut icon" href="/img/favicon_io/favicon.ico" />
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-        <script src="https://cdn.snipcart.com/scripts/2.0/snipcart.js" data-api-key="M2IyMmNmYTEtNjQ0Yi00MjI2LTkwOTMtZGIxOWY0MDZlNTgzNjM3MTI0MDkxNTc3MzgyMDA3" id="snipcart"></script>
+        <Script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></Script>
+        <Script src="https://cdn.snipcart.com/scripts/2.0/snipcart.js" data-api-key="M2IyMmNmYTEtNjQ0Yi00MjI2LTkwOTMtZGIxOWY0MDZlNTgzNjM3MTI0MDkxNTc3MzgyMDA3" id="snipcart"></Script>
         <link href="https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css" rel="stylesheet" type="text/css" />
       </Head>
       <Container>
