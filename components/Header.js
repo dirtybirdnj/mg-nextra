@@ -37,7 +37,7 @@ const Header = ({
         <Row justify="space-between" align="center">
           <Col span={2} align="center">
             <Image src="/img/vtj-circle.svg" alt="verticaltubejig.com" />
-            <Text h4>verticaltubejig.com</Text>
+            <Text hideIn="sm" h4>verticaltubejig.com</Text>
           </Col>
           <Col css={{display: 'flex', alignItems: 'center'}}>          
             <Navbar isCompact disableShadow disableBlur containerCss={{display: 'flex', justifyContent: 'flex-end'}}>

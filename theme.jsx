@@ -19,7 +19,7 @@ function Layout({ pageOpts, children }) {
       <Head>
         <title>{pageOpts.title}</title>
       </Head>
-      <Container md>
+      <Container sm>
         <Row>
           <Col>
             <Header pageMap={pageOpts.pageMap} />
