@@ -6,7 +6,7 @@ const lightTheme = createTheme({
   type: 'light',
   theme: {
     colors: {
-      link: '#10253E'
+      blue600: '#00008B'
     }
   }
 })
