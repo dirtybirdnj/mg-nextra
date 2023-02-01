@@ -12,7 +12,7 @@ function Layout({ pageOpts, children }) {
   // pageOpts.frontMatter
 
   // You can build the sidebar based on the structure data from `pageMap`:
-  // console.log(pageOpts.pageMap)
+  //console.log(pageOpts.pageMap)
 
   return (
     <>
@@ -41,7 +41,7 @@ function Layout({ pageOpts, children }) {
                       <pre {...props} />
                     </div>
                   )
-                },
+                }
               }}
             >
               {children}
@@ -54,7 +54,7 @@ function Layout({ pageOpts, children }) {
           </Col>
         </Row>
       </Container>
-    </>    
+    </>
   )
 }
 

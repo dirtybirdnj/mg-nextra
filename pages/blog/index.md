@@ -12,7 +12,7 @@ This page should show a list of posts of all md/mdx/js/jsx files in the /blog di
 
 Hardcoded blog post links
 
-<BlogList/>
+<BlogList />
 
 [hello store](/blog/hello-store)
 

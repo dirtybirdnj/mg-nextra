@@ -9,4 +9,7 @@ module.exports = withNextra({
   //   locales: ['default', 'en', 'de'],
   //   defaultLocale: 'default',
   // },
+  compiler: {
+    styledComponents: true,
+  }
 })

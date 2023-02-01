@@ -11,7 +11,7 @@ const lightTheme = createTheme({
   }
 })
 
-console.log('lightTheme', lightTheme);
+//console.log('lightTheme', lightTheme);
 
 // const darkTheme = createTheme({
 //   type: 'dark',
