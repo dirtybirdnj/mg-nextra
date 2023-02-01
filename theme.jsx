@@ -4,12 +4,12 @@ import Link from 'next/link';
 import { MDXProvider } from '@mdx-js/react';
 import styled from 'styled-components';
 
-import Navbar from './components/Navbar';
+import Header from './components/Header';
 
 const Container = styled.div`
   max-width: 750px;
   min-height: 100vh;
-  margin: 0px auto;
+  margin: 50px auto 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -56,7 +56,7 @@ const Filename = styled.div`
 `;
 
 const Footer = styled.div`
-  padding: 20px 0 30px;
+  padding-top: 20px;
 
   a {
     color: #275ea3;
@@ -83,7 +83,7 @@ function Layout({ pageOpts, children }) {
           <title>{pageOpts.title}</title>
         </Head>
         <Content>
-          <Navbar/>
+          <Header />
           <Main>
             <MDXProvider
               components={{
