@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
+import {isMobile} from 'react-device-detect';
 
 import Logo from '../public/img/vtj-circle.svg';
 
@@ -78,30 +79,28 @@ const Title = styled.div`
   color: #000010;
 `;
 
-const Navbar = () => {
+const Navbar = ({
+  pageMap
+}) => {
   const router = useRouter();
   const currentRoute = router.pathname;
 
-  const navItems = [
-    'home',
-    'store',
-    'gallery',
-    'blog',
-    'about',
-    'contact'
-  ]
+  console.log('isMobile', isMobile);
 
-  const links = navItems.map((item, i) => {
-    const path = item === 'home' ? '/' : '/' + item;
+  const links = pageMap.map((item, i) => {  
+    if (item.route){
+      return (
+        <Link key={i} className={currentRoute === item.route ? 'active' : ''} href={item.route}>{item.name === 'index' ? 'home' : item.name}</Link>
+        ) 
+    }
 
-    return <Link key={i} className={currentRoute === path ? 'active' : ''} href={path}>{item}</Link>
   });
 
   return (
     <HeaderContainer>
       <LogoContainer> 
         <Image src={Logo} alt="verticaltubejig.com" />
-        <Title>verticaltubejig.com</Title>
+        {!isMobile && (<Title>verticaltubejig.com</Title>)}
       </LogoContainer>
       <NavbarEl>
         <CartContainer className="snipcart-checkout">

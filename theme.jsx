@@ -83,7 +83,7 @@ function Layout({ pageOpts, children }) {
           <title>{pageOpts.title}</title>
         </Head>
         <Content>
-          <Header />
+          <Header pageMap={pageOpts.pageMap} />
           <Main>
             <MDXProvider
               components={{
