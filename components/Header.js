@@ -1,8 +1,8 @@
-import { useRef } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
-import {isMobile} from 'react-device-detect';
+import { useBreakpoints, useCurrentWidth } from 'react-breakpoints-hook';
 
 import Logo from '../public/img/vtj-circle.svg';
 
@@ -11,8 +11,13 @@ import Image from 'next/image';
 const HeaderContainer = styled.div`
   display: flex;
   gap: 25px;
-  align-items: flex-end;
   justify-content: space-between;
+  flex-direction: ${props => props.small ? 'column' : 'row'};
+  align-items: ${props => props.small ? 'center' : 'flex-end'};
+
+  .snipcart-checkout {
+    order: ${props => props.small ? '50' : '0'};
+  }
 `;
 
 const NavbarEl = styled.div`
@@ -20,7 +25,7 @@ const NavbarEl = styled.div`
   justify-content: center;
   align-items: flex-end;
   gap: 10px;
-  flex-direction: column;
+  flex-direction: ${props => props.small ? 'row' : 'column'};
 `;
 
 const LogoContainer = styled.div`
@@ -84,28 +89,37 @@ const Navbar = ({
 }) => {
   const router = useRouter();
   const currentRoute = router.pathname;
+  const smWidthSize = 690;
+  let width = useCurrentWidth();
 
-  console.log('isMobile', isMobile);
+  const [isSmall, setIsSmall] = useState(width < smWidthSize ? true : false);
+
+  const cartCopy = isSmall ? 'Cart' : 'View Cart';
+
+  useEffect(() => {
+    setIsSmall(width < smWidthSize);
+  }, [width])
 
   const links = pageMap.map((item, i) => {  
     if (item.route){
       return (
-        <Link key={i} className={currentRoute === item.route ? 'active' : ''} href={item.route}>{item.name === 'index' ? 'home' : item.name}</Link>
-        ) 
+        <Link key={i} className={currentRoute === item.route ? 'active' : ''} href={item.route}>
+          {item.name === 'index' ? 'home' : item.name}
+        </Link>
+      ) 
     }
-
   });
 
   return (
-    <HeaderContainer>
+    <HeaderContainer small={isSmall}>
       <LogoContainer> 
         <Image src={Logo} alt="verticaltubejig.com" />
-        {!isMobile && (<Title>verticaltubejig.com</Title>)}
+        {!isSmall && (<Title>verticaltubejig.com</Title>)}
       </LogoContainer>
-      <NavbarEl>
+      <NavbarEl small={isSmall}>
         <CartContainer className="snipcart-checkout">
-          <span>🛒</span>
-          <Cart>View Cart</Cart>
+          {!isSmall && (<span>🛒</span>)}
+          <Cart>{cartCopy}</Cart>
         </CartContainer>
         <LinksContainer>{links}</LinksContainer>        
       </NavbarEl>
