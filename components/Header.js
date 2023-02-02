@@ -92,23 +92,30 @@ const Navbar = ({
   const smWidthSize = 690;
   let width = useCurrentWidth();
 
+  const [navLinks, setNavLinks] = useState(null);
   const [isSmall, setIsSmall] = useState(width < smWidthSize ? true : false);
 
   const cartCopy = isSmall ? 'Cart' : 'View Cart';
 
   useEffect(() => {
-    setIsSmall(width < smWidthSize);
-  }, [width])
+    if (pageMap) {
+      const links = pageMap.map((item, i) => {  
+        if (item.route){
+          return (
+            <Link key={i} className={currentRoute === item.route ? 'active' : ''} href={item.route}>
+              {item.name === 'index' ? 'home' : item.name}
+            </Link>
+          ) 
+        }
+      });
 
-  const links = pageMap.map((item, i) => {  
-    if (item.route){
-      return (
-        <Link key={i} className={currentRoute === item.route ? 'active' : ''} href={item.route}>
-          {item.name === 'index' ? 'home' : item.name}
-        </Link>
-      ) 
+      setNavLinks(links);
     }
-  });
+  }, [pageMap]);
+
+  useEffect(() => {
+    setIsSmall(width < smWidthSize);
+  }, [width]);
 
   return (
     <HeaderContainer small={isSmall}>
@@ -121,7 +128,7 @@ const Navbar = ({
           {!isSmall && (<span>🛒</span>)}
           <Cart>{cartCopy}</Cart>
         </CartContainer>
-        <LinksContainer>{links}</LinksContainer>        
+        <LinksContainer>{navLinks && navLinks}</LinksContainer>        
       </NavbarEl>
     </HeaderContainer>
   )
